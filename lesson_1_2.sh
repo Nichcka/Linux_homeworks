@@ -1,18 +1,20 @@
 #!/bin/bash
 
-read option word
+option=$1
+world=$2
 
-if  [[ -z "$option" ]] || [[ -z "$word" ]]; then
+
+if  [[ -z "$1" ]] || [[ -z "$2" ]]; then
   echo "Необходимо указать аргументы -u или -l и слово."
   exit
 fi
 
 
-if [[ $option == "-u" ]]; then
-  echo "${word^^}"
+if [[ $1 == "-u" ]]; then
+  echo "${2^^}"
   
-elif [[ $option == "-l" ]]; then
-  echo "${word,,}"
+elif [[ $1 == "-l" ]]; then
+  echo "${2,,}"
 
 else
   echo "Ошибка" 
